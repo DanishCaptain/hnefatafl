@@ -7,9 +7,12 @@ import android.view.View;
 import com.danishcaptain.games.hnefatafl.domain.Defender;
 import com.danishcaptain.games.hnefatafl.domain.King;
 import com.danishcaptain.games.hnefatafl.domain.Offender;
+import com.danishcaptain.games.hnefatafl.domain.Piece;
 import com.danishcaptain.games.hnefatafl.widget.CenterCastle;
+import com.danishcaptain.games.hnefatafl.widget.CornerCastle;
 import com.danishcaptain.games.hnefatafl.widget.DefenseLocation;
 import com.danishcaptain.games.hnefatafl.widget.EmptyLocation;
+import com.danishcaptain.games.hnefatafl.widget.MoveLocation;
 import com.danishcaptain.games.hnefatafl.widget.OffenseLocation;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -20,6 +23,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         createKing(R.id.buttonCC);
+        initCorner(R.id.buttonTL);
+        initCorner(R.id.buttonTR);
+        initCorner(R.id.buttonBL);
+        initCorner(R.id.buttonBR);
 
         createDefender(R.id.buttonD1);
         createDefender(R.id.buttonD2);
@@ -149,6 +156,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         c1.add(k);
     }
 
+    private void initCorner(int id) {
+       CornerCastle c1 = findViewById(id);
+        c1.setOnClickListener(this);
+    }
+
     private void createDefender(int id) {
         DefenseLocation c1 = findViewById(id);
         c1.setOnClickListener(this);
@@ -170,6 +182,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        System.out.println("bks: "+v.getId());
+        MoveLocation ml = (MoveLocation) v;
+        if (ml.hasPiece()) {
+            Piece p = ml.getPiece();
+            System.out.println("bks: "+p.getDisplayText());
+        } else {
+            System.out.println("bks: "+v.getId());
+        }
     }
 }

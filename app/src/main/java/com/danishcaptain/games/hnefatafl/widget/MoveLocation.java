@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 
 import com.danishcaptain.games.hnefatafl.domain.Piece;
 
-abstract class MoveLocation extends AppCompatButton {
+public abstract class MoveLocation extends AppCompatButton {
     private Piece piece;
 
     public MoveLocation(Context context) {
@@ -39,11 +39,11 @@ abstract class MoveLocation extends AppCompatButton {
     abstract protected int getDefaultTextColor();
     abstract protected int getDefaultColor();
 
-    protected final boolean hasPiece() {
+    public final boolean hasPiece() {
         return piece != null;
     }
 
-    protected final Piece getPiece() {
+    public final Piece getPiece() {
         return piece;
     }
 
