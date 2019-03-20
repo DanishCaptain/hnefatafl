@@ -70,12 +70,12 @@
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button9_1"
+                android:id="@+id/buttonE1"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button10_1"
+                android:id="@+id/buttonE2"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
@@ -91,22 +91,22 @@
             android:layout_height="wrap_content"
             >
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button1_2"
+                android:id="@+id/buttonE3"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button2_2"
+                android:id="@+id/buttonE4"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button3_2"
+                android:id="@+id/buttonE5"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button4_2"
+                android:id="@+id/buttonE6"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
@@ -126,22 +126,22 @@
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button8_2"
+                android:id="@+id/buttonE7"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button9_2"
+                android:id="@+id/buttonE8"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button10_2"
+                android:id="@+id/buttonE9"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button11_2"
+                android:id="@+id/buttonE10"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
@@ -152,57 +152,57 @@
             android:layout_height="wrap_content"
             >
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button1_3"
+                android:id="@+id/buttonE11"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button2_3"
+                android:id="@+id/buttonE12"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button3_3"
+                android:id="@+id/buttonE13"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button4_3"
+                android:id="@+id/buttonE14"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button5_3"
+                android:id="@+id/buttonE15"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button6_3"
+                android:id="@+id/buttonE16"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button7_3"
+                android:id="@+id/buttonE17"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button8_3"
+                android:id="@+id/buttonE18"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button9_3"
+                android:id="@+id/buttonE19"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button10_3"
+                android:id="@+id/buttonE20"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button11_3"
+                android:id="@+id/buttonE21"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
@@ -218,47 +218,47 @@
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button2_4"
+                android:id="@+id/buttonE22"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button3_4"
+                android:id="@+id/buttonE23"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button4_4"
+                android:id="@+id/buttonE24"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button5_4"
+                android:id="@+id/buttonE25"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/button6_4"
+                android:id="@+id/buttonD1"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button7_4"
+                android:id="@+id/buttonE26"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button8_4"
+                android:id="@+id/buttonE27"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button9_4"
+                android:id="@+id/buttonE28"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button10_4"
+                android:id="@+id/buttonE29"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
@@ -284,37 +284,37 @@
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button3_5"
+                android:id="@+id/buttonE30"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button4_5"
+                android:id="@+id/buttonE31"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/button5_5"
+                android:id="@+id/buttonD2"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/button6_5"
+                android:id="@+id/buttonD3"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/button7_5"
+                android:id="@+id/buttonD4"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button8_5"
+                android:id="@+id/buttonE32"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button9_5"
+                android:id="@+id/buttonE33"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
@@ -345,17 +345,17 @@
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button3_6"
+                android:id="@+id/buttonE34"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/button4_6"
+                android:id="@+id/buttonD5"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/button5_6"
+                android:id="@+id/buttonD6"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
@@ -365,17 +365,17 @@
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/button7_6"
+                android:id="@+id/buttonD7"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/button8_6"
+                android:id="@+id/buttonD8"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button9_6"
+                android:id="@+id/buttonE35"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
@@ -406,37 +406,37 @@
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button3_7"
+                android:id="@+id/buttonE36"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button4_7"
+                android:id="@+id/buttonE37"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/button5_7"
+                android:id="@+id/buttonD9"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/button6_7"
+                android:id="@+id/buttonD10"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/button7_7"
+                android:id="@+id/buttonD11"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button8_7"
+                android:id="@+id/buttonE38"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button9_7"
+                android:id="@+id/buttonE39"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
@@ -462,47 +462,47 @@
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button2_8"
+                android:id="@+id/buttonE40"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button3_8"
+                android:id="@+id/buttonE41"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button4_8"
+                android:id="@+id/buttonE42"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button5_8"
+                android:id="@+id/buttonE43"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/button6_8"
+                android:id="@+id/buttonD12"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button7_8"
+                android:id="@+id/buttonE44"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button8_8"
+                android:id="@+id/buttonE45"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button9_8"
+                android:id="@+id/buttonE46"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button10_8"
+                android:id="@+id/buttonE47"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
@@ -518,57 +518,57 @@
             android:layout_height="wrap_content"
             >
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button1_9"
+                android:id="@+id/buttonE48"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button2_9"
+                android:id="@+id/buttonE49"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button3_9"
+                android:id="@+id/buttonE50"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button4_9"
+                android:id="@+id/buttonE51"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button5_9"
+                android:id="@+id/buttonE52"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button6_9"
+                android:id="@+id/buttonE53"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button7_9"
+                android:id="@+id/buttonE54"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button8_9"
+                android:id="@+id/buttonE55"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button9_9"
+                android:id="@+id/buttonE56"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button10_9"
+                android:id="@+id/buttonE57"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button11_9"
+                android:id="@+id/buttonE58"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
@@ -579,22 +579,22 @@
             android:layout_height="wrap_content"
             >
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button1_10"
+                android:id="@+id/buttonE59"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button2_10"
+                android:id="@+id/buttonE60"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button3_10"
+                android:id="@+id/buttonE61"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button4_10"
+                android:id="@+id/buttonE62"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
@@ -614,22 +614,22 @@
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button8_10"
+                android:id="@+id/buttonE63"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button9_10"
+                android:id="@+id/buttonE64"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button10_10"
+                android:id="@+id/buttonE65"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button11_10"
+                android:id="@+id/buttonE66"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
@@ -645,12 +645,12 @@
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button2_11"
+                android:id="@+id/buttonE67"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button3_11"
+                android:id="@+id/buttonE68"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
@@ -680,12 +680,12 @@
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button9_11"
+                android:id="@+id/buttonE69"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
             <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button10_11"
+                android:id="@+id/buttonE70"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 />
