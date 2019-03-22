@@ -1,8 +1,6 @@
-package com.danishcaptain.games.hnefatafl.domain;
+package com.danishcaptain.games.hnefatafl.model.domain;
 
 import android.graphics.Color;
-
-import com.danishcaptain.games.hnefatafl.domain.Piece;
 
 public class King extends Piece {
     private static final String DEFAULT_TEXT = "K";

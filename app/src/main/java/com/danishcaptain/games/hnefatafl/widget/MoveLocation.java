@@ -1,24 +1,29 @@
 package com.danishcaptain.games.hnefatafl.widget;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.AppCompatButton;
-import android.util.AttributeSet;
 
-import com.danishcaptain.games.hnefatafl.domain.Piece;
+import com.danishcaptain.games.hnefatafl.model.domain.Piece;
 
 public abstract class MoveLocation extends AppCompatButton {
+    private final int boardX;
+    private final int boardY;
     private Piece piece;
+    private boolean active;
 
-    public MoveLocation(Context context) {
+    public MoveLocation(Context context, int x, int y) {
         super(context);
+        this.boardX = x;
+        this.boardY = y;
     }
 
-    public MoveLocation(Context context, AttributeSet attrs) {
-        super(context, attrs);
+    public int getBoardX() {
+        return boardX;
     }
 
-    public MoveLocation(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
+    public int getBoardY() {
+        return boardY;
     }
 
     @Override
@@ -26,13 +31,24 @@ public abstract class MoveLocation extends AppCompatButton {
         if (hasPiece()) {
             setText(getPiece().getDisplayText());
             setTextColor(getPiece().getDisplayTextColor());
-            setBackgroundColor(getPiece().getDisplayColor());
         } else {
             setText(getDefaultText());
             setTextColor(getDefaultTextColor());
-            setBackgroundColor(getDefaultColor());
         }
+        setBackgroundColor();
         return super.getText();
+    }
+
+    private void setBackgroundColor() {
+        if (active) {
+            setBackgroundColor(Color.RED);
+        } else {
+            if (hasPiece()) {
+                setBackgroundColor(getPiece().getDisplayColor());
+            } else {
+                setBackgroundColor(getDefaultColor());
+            }
+        }
     }
 
     abstract protected String getDefaultText();
@@ -50,4 +66,11 @@ public abstract class MoveLocation extends AppCompatButton {
     public void add(Piece piece) {
         this.piece = piece;
     }
+
+    public void setActive(boolean b) {
+        active = b;
+        setBackgroundColor();
+    }
+
+    public abstract boolean allowsPiece(Piece piece);
 }

@@ -1,4 +1,4 @@
-package com.danishcaptain.games.hnefatafl.domain;
+package com.danishcaptain.games.hnefatafl.model.domain;
 
 public abstract class Piece {
     public abstract String getDisplayText();

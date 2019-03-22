@@ -2,31 +2,22 @@ package com.danishcaptain.games.hnefatafl.widget;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.util.AttributeSet;
+
+import com.danishcaptain.games.hnefatafl.model.domain.Piece;
 
 public class OffenseLocation extends MoveLocation {
     static final String DEFAULT_TEXT = "";
     static final int DEFAULT_COLOR = Color.GREEN;
     private static final int DEFAULT_TEXT_COLOR = Color.WHITE;
 
-    public OffenseLocation(Context context) {
-        super(context);
+    public OffenseLocation(Context context, int x, int y) {
+        super(context, x, y);
         init();
     }
 
     private void init() {
         setText(DEFAULT_TEXT);
         setBackgroundColor(DEFAULT_COLOR);
-    }
-
-    public OffenseLocation(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init();
-    }
-
-    public OffenseLocation(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        init();
     }
 
     @Override
@@ -44,4 +35,8 @@ public class OffenseLocation extends MoveLocation {
         return DEFAULT_COLOR;
     }
 
+    @Override
+    public boolean allowsPiece(Piece piece) {
+        return true;
+    }
 }

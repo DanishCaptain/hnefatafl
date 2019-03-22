@@ -1,6 +1,4 @@
-package com.danishcaptain.games.hnefatafl.domain;
-
-import android.graphics.Color;
+package com.danishcaptain.games.hnefatafl.model.domain;
 
 public class Defender extends Piece {
     private static final String DEFAULT_TEXT = "D";

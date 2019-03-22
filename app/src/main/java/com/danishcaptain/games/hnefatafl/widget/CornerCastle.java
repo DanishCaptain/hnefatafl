@@ -1,29 +1,20 @@
 package com.danishcaptain.games.hnefatafl.widget;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.util.AttributeSet;
+
+import com.danishcaptain.games.hnefatafl.model.domain.King;
+import com.danishcaptain.games.hnefatafl.model.domain.Piece;
 
 public class CornerCastle extends MoveLocation implements Castle {
 
-    public CornerCastle(Context context) {
-        super(context);
+    public CornerCastle(Context context, int x, int y) {
+        super(context, x, y);
         init();
     }
 
     private void init() {
         setText(DEFAULT_TEXT);
         setBackgroundColor(DEFAULT_COLOR);
-    }
-
-    public CornerCastle(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init();
-    }
-
-    public CornerCastle(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        init();
     }
 
     @Override
@@ -41,4 +32,12 @@ public class CornerCastle extends MoveLocation implements Castle {
         return DEFAULT_COLOR;
     }
 
+    @Override
+    public boolean allowsPiece(Piece piece) {
+        if (piece instanceof King) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

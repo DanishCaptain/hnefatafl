@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!--
     <TextView
         android:id="@+id/moveTextView"
         android:layout_width="wrap_content"
@@ -15,686 +16,86 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@+id/moveTextView"
+        -->
     <TableLayout
-        android:id="@+id/tableLayout1"
+        android:id="@+id/board"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/moveTextView"
         android:layout_marginTop="32dp"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
         android:gravity="center_vertical|center_horizontal"
         android:background="@color/board"
         >
         <TableRow
-            android:id="@+id/tableRow1_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/boardRow1"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
             >
-            <com.danishcaptain.games.hnefatafl.widget.CornerCastle
-                android:id="@+id/buttonTL"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button2_1"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/button3_1"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOT1"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOT2"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOT3"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOT4"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOT5"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE1"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE2"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.CornerCastle
-                android:id="@+id/buttonTR"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
         </TableRow>
         <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
+            android:id="@+id/boardRow2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE3"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE4"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE5"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE6"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOT6"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOT7"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOT8"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE7"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE8"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE9"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE10"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
         </TableRow>
         <TableRow
-            android:id="@+id/tableRow1_3"
+            android:id="@+id/boardRow3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE11"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE12"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE13"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE14"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE15"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE16"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE17"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE18"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE19"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE20"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE21"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
         </TableRow>
         <TableRow
-            android:id="@+id/tableRow4"
+            android:id="@+id/boardRow4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOL1"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE22"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE23"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE24"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE25"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/buttonD1"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE26"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE27"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE28"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE29"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOL2"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
         </TableRow>
         <TableRow
-            android:id="@+id/tableRow1_5"
+            android:id="@+id/boardRow5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOL3"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOL4"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE30"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE31"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/buttonD2"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/buttonD3"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/buttonD4"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE32"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE33"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOL5"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOL6"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
         </TableRow>
         <TableRow
-            android:id="@+id/tableRow6"
+            android:id="@+id/boardRow6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOL7"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOL8"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE34"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/buttonD5"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/buttonD6"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.CenterCastle
-                android:id="@+id/buttonCC"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/buttonD7"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/buttonD8"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE35"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOR1"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOR2"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
         </TableRow>
         <TableRow
-            android:id="@+id/tableRow1_7"
+            android:id="@+id/boardRow7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOR3"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOR4"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE36"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE37"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/buttonD9"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/buttonD10"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/buttonD11"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE38"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE39"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOR5"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOR6"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
         </TableRow>
         <TableRow
-            android:id="@+id/tableRow8"
+            android:id="@+id/boardRow8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOR7"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE40"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE41"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE42"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE43"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.DefenseLocation
-                android:id="@+id/buttonD12"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE44"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE45"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE46"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE47"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOR8"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
         </TableRow>
         <TableRow
-            android:id="@+id/tableRow1_9"
+            android:id="@+id/boardRow9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE48"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE49"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE50"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE51"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE52"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE53"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE54"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE55"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE56"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE57"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE58"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
         </TableRow>
         <TableRow
-            android:id="@+id/tableRow10"
+            android:id="@+id/boardRow10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE59"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE60"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE61"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE62"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOB1"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOB2"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOB3"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE63"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE64"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE65"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE66"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
         </TableRow>
         <TableRow
-            android:id="@+id/tableRow1_11"
+            android:id="@+id/boardRow11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
-            <com.danishcaptain.games.hnefatafl.widget.CornerCastle
-                android:id="@+id/buttonBL"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE67"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE68"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOB4"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOB5"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOB6"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOB7"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.OffenseLocation
-                android:id="@+id/buttonOB8"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE69"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.EmptyLocation
-                android:id="@+id/buttonE70"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-            <com.danishcaptain.games.hnefatafl.widget.CornerCastle
-                android:id="@+id/buttonBR"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                />
-        </TableRow>
+      </TableRow>
     </TableLayout>
 
 </android.support.constraint.ConstraintLayout>

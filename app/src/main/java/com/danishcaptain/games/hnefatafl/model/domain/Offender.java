@@ -1,4 +1,4 @@
-package com.danishcaptain.games.hnefatafl.domain;
+package com.danishcaptain.games.hnefatafl.model.domain;
 
 import android.graphics.Color;
 
