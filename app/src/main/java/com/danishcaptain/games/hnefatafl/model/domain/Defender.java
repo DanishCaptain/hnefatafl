@@ -1,22 +1,14 @@
 package com.danishcaptain.games.hnefatafl.model.domain;
 
-public class Defender extends Piece {
-    private static final String DEFAULT_TEXT = "D";
-    private static final int DEFAULT_COLOR = King.DEFAULT_COLOR;
-    private static final int DEFAULT_TEXT_COLOR = King.DEFAULT_TEXT_COLOR;
+import android.graphics.Color;
 
-    @Override
-    public String getDisplayText() {
-        return DEFAULT_TEXT;
-    }
+public interface Defender {
+    int DEFAULT_COLOR = Color.LTGRAY;
+    int DEFAULT_TEXT_COLOR = Color.BLACK;
 
-    @Override
-    public int getDisplayColor() {
-        return DEFAULT_COLOR;
-    }
+    int getBoardX();
+    int getBoardY();
 
-    @Override
-    public int getDisplayTextColor() {
-        return DEFAULT_TEXT_COLOR;
-    }
+    void kill();
 }
+

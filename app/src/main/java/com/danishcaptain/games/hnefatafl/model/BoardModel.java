@@ -2,15 +2,16 @@ package com.danishcaptain.games.hnefatafl.model;
 
 import android.app.Activity;
 import android.view.View;
-import android.widget.TableLayout;
 import android.widget.TableRow;
 
 import com.danishcaptain.games.hnefatafl.R;
 import com.danishcaptain.games.hnefatafl.model.domain.Board;
 import com.danishcaptain.games.hnefatafl.model.domain.Defender;
+import com.danishcaptain.games.hnefatafl.model.domain.DefensePiece;
 import com.danishcaptain.games.hnefatafl.model.domain.DefensePlayer;
-import com.danishcaptain.games.hnefatafl.model.domain.King;
+import com.danishcaptain.games.hnefatafl.model.domain.KingPiece;
 import com.danishcaptain.games.hnefatafl.model.domain.Offender;
+import com.danishcaptain.games.hnefatafl.model.domain.OffensePiece;
 import com.danishcaptain.games.hnefatafl.model.domain.OffensePlayer;
 import com.danishcaptain.games.hnefatafl.model.domain.Piece;
 import com.danishcaptain.games.hnefatafl.model.domain.Player;
@@ -28,21 +29,21 @@ class BoardModel implements View.OnClickListener {
     private Board board;
     private int cellWidth;
     private int cellHeight;
-    private ArrayList<Player> players = new ArrayList();
-    private ArrayList<Piece> pieces = new ArrayList();
-    private ArrayList<Offender> offenders = new ArrayList();
-    private ArrayList<Defender> defenders = new ArrayList();
+    private ArrayList<Player> players = new ArrayList<>();
+    private ArrayList<Piece> pieces = new ArrayList<>();
+    private ArrayList<Offender> offenders = new ArrayList<>();
+    private ArrayList<Defender> defenders = new ArrayList<>();
+    private ArrayList<CornerCastle> corners = new ArrayList<>();
+//    private KingPiece king;
     private Player current;
-    private King king;
     private boolean gameOver;
-    private ArrayList<CornerCastle> corners = new ArrayList();
 
     public void init(Activity activity) {
         board = new Board(11,11);
         cellWidth = (int) activity.getResources().getDimension(R.dimen.cell_width);
         cellHeight = (int) activity.getResources().getDimension(R.dimen.cell_height);
 
-        TableLayout boardView = activity.findViewById(R.id.board);
+        //TableLayout boardView = activity.findViewById(R.id.board);
         initRow1(activity);
         initRow2(activity);
         initRow3(activity);
@@ -305,24 +306,183 @@ class BoardModel implements View.OnClickListener {
             if (current.hasActive()) {
                 if (isValidMove(current.getActive(), ml)) {
                     MoveLocation old = current.getActive();
-                    ml.add(old.getPiece());
+                    Piece p = old.getPiece();
                     old.add(null);
+                    ml.add(p);
                     current.getActive().setActive(false);
                     current.setActive(null);
+                    if (ml.getPiece() instanceof Offender) {
+                        checkOffenseDeletes();
+                    } else if (ml.getPiece() instanceof Defender) {
+                        checkDefenseDeletes();
+                    }
+                    checkWins();
                     if (players.get(0).equals(current)) {
                         current = players.get(1);
                     } else {
                         current = players.get(0);
                     }
-                    checkDeletes();
-                    checkWins();
                 }
             }
         }
     }
 
-    private void checkDeletes() {
+    private void checkOffenseDeletes() {
+        for (Offender o1 : offenders) {
+            for (Offender o2 : offenders) {
+                if (o1 == o2) {
+                    continue;
+                }
+                if (o1.getBoardX() == o2.getBoardX()) {
+                    Offender min;
+                    Offender max;
+                    if (o1.getBoardY() > o2.getBoardY()) {
+                        min = o2;
+                        max = o1;
+                    } else {
+                        min = o1;
+                        max = o2;
+                    }
+                    if (max.getBoardY() > min.getBoardY()) {
+                        boolean good = true;
+                        ArrayList<Defender> killList = new ArrayList();
+                        for (int i=min.getBoardY()+1; i<=max.getBoardY()-1; i++) {
+                            MoveLocation x = this.lookupLocation(o1.getBoardX(), i);
+                            if (x.hasPiece()) {
+                                if (x.getPiece() instanceof Defender) {
+                                    killList.add((Defender)x.getPiece());
+                                } else if (x.getPiece() instanceof Offender) {
+                                    good = false;
+                                    break;
+                                }
+                            } else {
+                                good = false;
+                                break;
+                            }
+                        }
+                        if (good && killList.size() > 0) {
+                            for (Defender o : killList) {
+                                o.kill();
+                            }
+                            defenders.removeAll(killList);
+                        }
+                    }
+                } else if (o1.getBoardY() == o2.getBoardY()) {
+                    Offender min;
+                    Offender max;
+                    if (o1.getBoardX() > o2.getBoardX()) {
+                        min = o2;
+                        max = o1;
+                    } else {
+                        min = o1;
+                        max = o2;
+                    }
+                    if (max.getBoardX() > min.getBoardX()) {
+                        boolean good = true;
+                        ArrayList<Defender> killList = new ArrayList();
+                        for (int i=min.getBoardX()+1; i<=max.getBoardX()-1; i++) {
+                            MoveLocation x = this.lookupLocation(i, o1.getBoardY());
+                            if (x.hasPiece()) {
+                                if (x.getPiece() instanceof Defender) {
+                                    killList.add((Defender)x.getPiece());
+                                } else if (x.getPiece() instanceof Offender) {
+                                    good = false;
+                                    break;
+                                }
+                            } else {
+                                good = false;
+                                break;
+                            }
+                        }
+                        if (good && killList.size() > 0) {
+                            for (Defender o : killList) {
+                                o.kill();
+                            }
+                            defenders.removeAll(killList);
+                        }
+                    }
+                }
+            }
+        }
+    }
 
+    private void checkDefenseDeletes() {
+        for (Defender d1 : defenders) {
+            for (Defender d2 : defenders) {
+                if (d1 == d2) {
+                    continue;
+                }
+                if (d1.getBoardX() == d2.getBoardX()) {
+                    Defender min;
+                    Defender max;
+                    if (d1.getBoardY() > d2.getBoardY()) {
+                        min = d2;
+                        max = d1;
+                    } else {
+                        min = d1;
+                        max = d2;
+                    }
+                    if (max.getBoardY() > min.getBoardY()) {
+                        boolean good = true;
+                        ArrayList<Offender> killList = new ArrayList();
+                        for (int i=min.getBoardY()+1; i<=max.getBoardY()-1; i++) {
+                            MoveLocation x = this.lookupLocation(d1.getBoardX(), i);
+                            if (x.hasPiece()) {
+                                if (x.getPiece() instanceof Offender) {
+                                    killList.add((Offender)x.getPiece());
+                                } else if (x.getPiece() instanceof Defender) {
+                                    good = false;
+                                    break;
+                                }
+                            } else {
+                                good = false;
+                                break;
+                            }
+                        }
+                        if (good && killList.size() > 0) {
+                            for (Offender o : killList) {
+                                o.kill();
+                            }
+                            offenders.removeAll(killList);
+                        }
+                    }
+                } else if (d1.getBoardY() == d2.getBoardY()) {
+                    Defender min;
+                    Defender max;
+                    if (d1.getBoardX() > d2.getBoardX()) {
+                        min = d2;
+                        max = d1;
+                    } else {
+                        min = d1;
+                        max = d2;
+                    }
+                    if (max.getBoardX() > min.getBoardX()) {
+                        boolean good = true;
+                        ArrayList<Offender> killList = new ArrayList();
+                        for (int i=min.getBoardX()+1; i<=max.getBoardX()-1; i++) {
+                            MoveLocation x = this.lookupLocation(i, d1.getBoardY());
+                            if (x.hasPiece()) {
+                                if (x.getPiece() instanceof Offender) {
+                                    killList.add((Offender)x.getPiece());
+                                } else if (x.getPiece() instanceof Defender) {
+                                    good = false;
+                                    break;
+                                }
+                            } else {
+                                good = false;
+                                break;
+                            }
+                        }
+                        if (good && killList.size() > 0) {
+                            for (Offender o : killList) {
+                                o.kill();
+                            }
+                            offenders.removeAll(killList);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private void checkWins() {
@@ -332,7 +492,14 @@ class BoardModel implements View.OnClickListener {
                 break;
             }
         }
-        // is king dead
+        if (!gameOver) {
+            for (Defender d : defenders) {
+                if (d instanceof KingPiece) {
+                    return;
+                }
+            }
+            gameOver = true;
+        }
     }
 
     private boolean isValidMove(MoveLocation ml1, MoveLocation ml2) {
@@ -391,41 +558,46 @@ class BoardModel implements View.OnClickListener {
         }
     }
 
-    public MoveLocation lookupLocation(int row, int col) {
+    MoveLocation lookupLocation(int row, int col) {
         return board.lookupLocation(row, col);
     }
 
-    public void setCurrent(Player p) {
+    void setCurrent(Player p) {
         current = p;
     }
 
-    public void register(OffensePlayer o) {
+    void register(OffensePlayer o) {
         players.add(o);
         for (Offender t : offenders) {
-            o.register(t);
+            if (t instanceof OffensePiece) {
+                o.register((OffensePiece)t);
+            }
         }
     }
 
-    public void register(DefensePlayer d) {
+    void register(DefensePlayer d) {
         players.add(d);
         for (Defender t : defenders) {
-            d.register(t);
+            if (t instanceof DefensePiece) {
+                d.register((DefensePiece) t);
+            } else if (t instanceof  KingPiece) {
+                d.register((KingPiece)t);
+            }
         }
-        d.register(king);
     }
 
-    public void register(Offender o) {
+    void register(OffensePiece o) {
         pieces.add(o);
         offenders.add(o);
     }
 
-    public void register(Defender d) {
+    void register(DefensePiece d) {
         pieces.add(d);
         defenders.add(d);
     }
 
-    public void register(King k) {
+    void register(KingPiece k) {
         pieces.add(k);
-        king = k;
+        defenders.add(k);
     }
 }

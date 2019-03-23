@@ -5,7 +5,7 @@ import com.danishcaptain.games.hnefatafl.widget.MoveLocation;
 import java.util.ArrayList;
 
 public abstract class Player {
-    private ArrayList<Piece> pieces = new ArrayList();
+    private ArrayList<Piece> pieces = new ArrayList<>();
     private MoveLocation active;
 
     public void register(Piece p) {

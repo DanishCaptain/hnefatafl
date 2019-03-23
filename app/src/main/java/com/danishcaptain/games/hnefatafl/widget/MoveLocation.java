@@ -64,7 +64,13 @@ public abstract class MoveLocation extends AppCompatButton {
     }
 
     public void add(Piece piece) {
+        if (this.piece != null) {
+            this.piece.deregister();
+        }
         this.piece = piece;
+        if (this.piece != null) {
+            this.piece.register(this);
+        }
     }
 
     public void setActive(boolean b) {
@@ -73,4 +79,9 @@ public abstract class MoveLocation extends AppCompatButton {
     }
 
     public abstract boolean allowsPiece(Piece piece);
+
+    @Override
+    public String toString() {
+        return boardX+","+boardY;
+    }
 }

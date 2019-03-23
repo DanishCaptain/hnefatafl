@@ -16,8 +16,8 @@ public final class GameModel {
 
     public void init(Activity activity) {
         boardModel.init(activity);
-        piecesModel.init(activity);
-        playerModel.init(activity);
+        piecesModel.init();
+        playerModel.init();
     }
 
     public synchronized static GameModel getInstance() {

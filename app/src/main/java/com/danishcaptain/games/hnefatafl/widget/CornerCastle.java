@@ -2,7 +2,7 @@ package com.danishcaptain.games.hnefatafl.widget;
 
 import android.content.Context;
 
-import com.danishcaptain.games.hnefatafl.model.domain.King;
+import com.danishcaptain.games.hnefatafl.model.domain.KingPiece;
 import com.danishcaptain.games.hnefatafl.model.domain.Piece;
 
 public class CornerCastle extends MoveLocation implements Castle {
@@ -34,10 +34,6 @@ public class CornerCastle extends MoveLocation implements Castle {
 
     @Override
     public boolean allowsPiece(Piece piece) {
-        if (piece instanceof King) {
-            return true;
-        } else {
-            return false;
-        }
+        return piece instanceof KingPiece;
     }
 }

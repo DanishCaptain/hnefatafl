@@ -1,11 +1,7 @@
 package com.danishcaptain.games.hnefatafl.model.domain;
 
-import android.graphics.Color;
-
-public class King extends Piece {
-    private static final String DEFAULT_TEXT = "K";
-    static final int DEFAULT_COLOR = Color.LTGRAY;
-    static final int DEFAULT_TEXT_COLOR = Color.BLACK;
+public class OffensePiece extends Piece implements Offender {
+    private static final String DEFAULT_TEXT = "O";
 
     @Override
     public String getDisplayText() {
@@ -21,4 +17,5 @@ public class King extends Piece {
     public int getDisplayTextColor() {
         return DEFAULT_TEXT_COLOR;
     }
+
 }
