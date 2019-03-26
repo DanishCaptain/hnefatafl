@@ -4,14 +4,14 @@ import android.app.Activity;
 
 public final class GameModel {
     private static GameModel singleton;
+    private final PlayerModel playerModel;
     private final BoardModel boardModel;
     private final PiecesModel piecesModel;
-    private final PlayerModel playerModel;
 
     private GameModel() {
-        boardModel = new BoardModel();
+        playerModel = new PlayerModel();
+        boardModel = new BoardModel(playerModel);
         piecesModel = new PiecesModel(boardModel);
-        playerModel = new PlayerModel(boardModel);
     }
 
     public void init(Activity activity) {
@@ -27,4 +27,7 @@ public final class GameModel {
         return singleton;
     }
 
+    public PlayerModel getPlayerInstance() {
+        return playerModel;
+    }
 }
