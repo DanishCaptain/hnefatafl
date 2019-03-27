@@ -7,7 +7,9 @@ import com.danishcaptain.games.hnefatafl.model.domain.Piece;
 
 public class EmptyLocation extends MoveLocation {
     static final String DEFAULT_TEXT = "";
-    static final int DEFAULT_COLOR = 0xebd5b3;
+    //public static final int DEFAULT_COLOR = 0xebd5b3;
+    public static final int DEFAULT_COLOR = Color.rgb(0x99,0xbd,0x4b);
+
     private static final int DEFAULT_TEXT_COLOR = Color.BLACK;
 
     public EmptyLocation(Context context, int x, int y) {

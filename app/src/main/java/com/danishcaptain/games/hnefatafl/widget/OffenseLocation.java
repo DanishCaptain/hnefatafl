@@ -7,7 +7,8 @@ import com.danishcaptain.games.hnefatafl.model.domain.Piece;
 
 public class OffenseLocation extends MoveLocation {
     static final String DEFAULT_TEXT = "";
-    static final int DEFAULT_COLOR = Color.GREEN;
+//    public static final int DEFAULT_COLOR = Color.GREEN;
+    public static final int DEFAULT_COLOR = Color.rgb(0xc2,0xb2,0x80);
     private static final int DEFAULT_TEXT_COLOR = Color.WHITE;
 
     public OffenseLocation(Context context, int x, int y) {
