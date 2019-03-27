@@ -5,41 +5,39 @@ import android.widget.TextView;
 
 import com.danishcaptain.games.hnefatafl.model.domain.Defender;
 import com.danishcaptain.games.hnefatafl.model.domain.DefensePlayer;
-import com.danishcaptain.games.hnefatafl.model.domain.KingPiece;
 import com.danishcaptain.games.hnefatafl.model.domain.Offender;
 import com.danishcaptain.games.hnefatafl.model.domain.OffensePlayer;
 import com.danishcaptain.games.hnefatafl.model.domain.Piece;
 import com.danishcaptain.games.hnefatafl.model.domain.Player;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class PlayerModel {
-    private ArrayList<Offender> offenders = new ArrayList();
-    private ArrayList<Defender> defenders = new ArrayList();
     private OffensePlayer op;
     private DefensePlayer dp;
     private Player current;
     private TextView info;
     private boolean gameOver;
 
-    public void init() {
-        initPlayer1();
-        initPlayer2();
+    public void init(PiecesModel pModel) {
+        initPlayer1(pModel);
+        initPlayer2(pModel);
     }
 
-    private void initPlayer1() {
-        op = new OffensePlayer();
+    private void initPlayer1(PiecesModel pModel) {
+        if (op == null) {
+            op = new OffensePlayer();
+        }
         current = op;
         op.setCurrent(true);
-        for (Offender t : offenders) {
+        for (Offender t : pModel.getOffenders()) {
             op.register((Piece) t);
         }
     }
 
-    private void initPlayer2() {
-        dp = new DefensePlayer();
-        for (Defender t : defenders) {
+    private void initPlayer2(PiecesModel pModel) {
+        if (dp == null) {
+            dp = new DefensePlayer();
+        }
+        for (Defender t : pModel.getDefenders()) {
             dp.register((Piece) t);
         }
     }
@@ -68,18 +66,6 @@ public class PlayerModel {
         }
     }
 
-    public void register(Offender o) {
-        offenders.add(o);
-    }
-
-    public void register(Defender d) {
-        defenders.add(d);
-    }
-
-    public void register(KingPiece k) {
-        defenders.add(k);
-    }
-
     public void initInfo(TextView info) {
         this.info = info;
     }
@@ -100,11 +86,12 @@ public class PlayerModel {
         return gameOver;
     }
 
-    public List<Offender> getOffenders() {
-        return offenders;
-    }
-
-    public List<Defender> getDefenders() {
-        return defenders;
+    public void reset(PiecesModel pModel) {
+        gameOver = false;
+        info.setBackgroundColor(Color.WHITE);
+        info.setText("");
+        dp.setCurrent(false);
+        op.setCurrent(false);
+        init(pModel);
     }
 }

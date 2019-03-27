@@ -16,4 +16,12 @@ public class Board {
     public MoveLocation lookupLocation(int row, int col) {
         return board[row][col];
     }
+
+    public void reset() {
+        for (MoveLocation[] b1 : board) {
+            for (MoveLocation b2 : b1) {
+                b2.reset();
+            }
+        }
+    }
 }

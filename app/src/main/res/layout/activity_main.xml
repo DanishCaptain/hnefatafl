@@ -18,14 +18,11 @@
         app:layout_constraintTop_toTopOf="parent" />
         android:layout_below="@+id/moveTextView"
         -->
-    <TextView
-        android:id="@+id/titleText"
+    <Button
+        android:id="@+id/resetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="@string/app_name"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="0dp"
+        android:text="Reset Game"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         />
@@ -38,7 +35,7 @@
         android:text="1"
         tools:layout_editor_absoluteX="98dp"
         tools:layout_editor_absoluteY="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/titleText"
+        app:layout_constraintTop_toBottomOf="@+id/resetButton"
         app:layout_constraintLeft_toLeftOf="parent"
         />
     <TextView

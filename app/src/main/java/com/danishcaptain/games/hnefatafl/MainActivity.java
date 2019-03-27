@@ -3,6 +3,7 @@ package com.danishcaptain.games.hnefatafl;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.danishcaptain.games.hnefatafl.model.GameModel;
@@ -10,7 +11,6 @@ import com.danishcaptain.games.hnefatafl.widget.BannerAdView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView titleTextView;
     private BannerAdView adTextView;
 
     @Override
@@ -19,7 +19,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         GameModel.getInstance().init(this);
 
-        titleTextView = findViewById(R.id.titleText);
+        Button resetButton = findViewById(R.id.resetButton);
+        resetButton.setOnClickListener(GameModel.getInstance());
+
         TextView player1TextView = findViewById(R.id.player1Text);
         GameModel.getInstance().getPlayerInstance().initOffensePlayer(player1TextView);
 

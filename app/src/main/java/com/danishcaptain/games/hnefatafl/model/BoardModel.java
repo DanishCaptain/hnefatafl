@@ -5,13 +5,10 @@ import android.view.View;
 import android.widget.TableRow;
 
 import com.danishcaptain.games.hnefatafl.R;
-import com.danishcaptain.games.hnefatafl.model.PlayerModel;
 import com.danishcaptain.games.hnefatafl.model.domain.Board;
 import com.danishcaptain.games.hnefatafl.model.domain.Defender;
-import com.danishcaptain.games.hnefatafl.model.domain.DefensePiece;
 import com.danishcaptain.games.hnefatafl.model.domain.KingPiece;
 import com.danishcaptain.games.hnefatafl.model.domain.Offender;
-import com.danishcaptain.games.hnefatafl.model.domain.OffensePiece;
 import com.danishcaptain.games.hnefatafl.model.domain.Piece;
 import com.danishcaptain.games.hnefatafl.model.domain.Player;
 import com.danishcaptain.games.hnefatafl.widget.CenterCastle;
@@ -26,16 +23,16 @@ import java.util.List;
 
 public class BoardModel implements View.OnClickListener {
     private static final int BASE = 10000;
-    private final PlayerModel pModel;
+    private final PlayerModel playerModel;
+    private final PiecesModel piecesModel;
     private ArrayList<CornerCastle> corners = new ArrayList<>();
     private Board board;
     private int cellWidth;
     private int cellHeight;
-    private ArrayList<Piece> pieces = new ArrayList<>();
-    private KingPiece king;
 
-    public BoardModel(PlayerModel pModel) {
-        this.pModel = pModel;
+    public BoardModel(PlayerModel playerModel, PiecesModel piecesModel) {
+        this.playerModel = playerModel;
+        this.piecesModel = piecesModel;
     }
 
     public void init(Activity activity) {
@@ -287,13 +284,13 @@ public class BoardModel implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (pModel.isGameOver()) {
+        if (playerModel.isGameOver()) {
             return;
         }
         MoveLocation ml = (MoveLocation) v;
         if (ml.hasPiece()) {
             Piece p = ml.getPiece();
-            Player current = pModel.getCurrent();
+            Player current = playerModel.getCurrent();
             if (current.hasActive()) {
                 if (current.getActive().equals(ml)) {
                     current.getActive().setActive(false);
@@ -304,7 +301,7 @@ public class BoardModel implements View.OnClickListener {
                 ml.setActive(true);
             }
         } else {
-            Player current = pModel.getCurrent();
+            Player current = playerModel.getCurrent();
             if (current.hasActive()) {
                 if (isValidMove(current.getActive(), ml)) {
                     MoveLocation old = current.getActive();
@@ -319,15 +316,15 @@ public class BoardModel implements View.OnClickListener {
                         checkDefenseDeletes();
                     }
                     checkWins();
-                    pModel.toggleCurrent();
+                    playerModel.toggleCurrent();
                 }
             }
         }
     }
 
     private void checkOffenseDeletes() {
-        List<Offender> offenders = pModel.getOffenders();
-        List<Defender> defenders = pModel.getDefenders();
+        List<Offender> offenders = piecesModel.getOffenders();
+        List<Defender> defenders = piecesModel.getDefenders();
         for (Offender o1 : offenders) {
             for (Offender o2 : offenders) {
                 if (o1 == o2) {
@@ -407,8 +404,8 @@ public class BoardModel implements View.OnClickListener {
     }
 
     private void checkDefenseDeletes() {
-        List<Offender> offenders = pModel.getOffenders();
-        List<Defender> defenders = pModel.getDefenders();
+        List<Offender> offenders = piecesModel.getOffenders();
+        List<Defender> defenders = piecesModel.getDefenders();
         for (Defender d1 : defenders) {
             for (Defender d2 : defenders) {
                 if (d1 == d2) {
@@ -490,17 +487,17 @@ public class BoardModel implements View.OnClickListener {
     private void checkWins() {
         for (CornerCastle cc : corners) {
             if (cc.hasPiece()) {
-                pModel.defenseWins();
+                playerModel.defenseWins();
                 return;
             }
         }
-        List<Defender> defenders = pModel.getDefenders();
+        List<Defender> defenders = piecesModel.getDefenders();
         for (Defender p : defenders) {
             if (p instanceof KingPiece) {
                 return;
             }
         }
-              pModel.offenseWins();
+              playerModel.offenseWins();
     }
 
     private boolean isValidMove(MoveLocation ml1, MoveLocation ml2) {
@@ -563,19 +560,7 @@ public class BoardModel implements View.OnClickListener {
         return board.lookupLocation(row, col);
     }
 
-    void register(OffensePiece o) {
-        pieces.add(o);
-        pModel.register(o);
-    }
-
-    void register(DefensePiece d) {
-        pieces.add(d);
-        pModel.register(d);
-    }
-
-    void register(KingPiece k) {
-        pieces.add(k);
-        pModel.register(k);
-        king = k;
+    public void reset() {
+        board.reset();
     }
 }

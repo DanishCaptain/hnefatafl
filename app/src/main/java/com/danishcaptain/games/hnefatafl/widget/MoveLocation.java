@@ -84,4 +84,9 @@ public abstract class MoveLocation extends AppCompatButton {
     public String toString() {
         return boardX+","+boardY;
     }
+
+    public void reset() {
+        piece = null;
+        active = false;
+    }
 }

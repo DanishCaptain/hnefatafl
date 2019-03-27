@@ -1,32 +1,34 @@
 package com.danishcaptain.games.hnefatafl.model;
 
+import com.danishcaptain.games.hnefatafl.model.domain.Defender;
 import com.danishcaptain.games.hnefatafl.model.domain.DefensePiece;
 import com.danishcaptain.games.hnefatafl.model.domain.KingPiece;
+import com.danishcaptain.games.hnefatafl.model.domain.Offender;
 import com.danishcaptain.games.hnefatafl.model.domain.OffensePiece;
 import com.danishcaptain.games.hnefatafl.widget.MoveLocation;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class PiecesModel {
-    private final BoardModel board;
+    private ArrayList<Offender> offenders = new ArrayList();
+    private ArrayList<Defender> defenders = new ArrayList();
 
-    PiecesModel(BoardModel board) {
-        this.board = board;
+    public void init(BoardModel board) {
+        initRow1(board);
+        initRow2(board);
+        initRow3(board);
+        initRow4(board);
+        initRow5(board);
+        initRow6(board);
+        initRow7(board);
+        initRow8(board);
+        initRow9(board);
+        initRow10(board);
+        initRow11(board);
     }
 
-    public void init() {
-        initRow1();
-        initRow2();
-        initRow3();
-        initRow4();
-        initRow5();
-        initRow6();
-        initRow7();
-        initRow8();
-        initRow9();
-        initRow10();
-        initRow11();
-    }
-
-    private void initRow1() {
+    private void initRow1(BoardModel board) {
         int row = 0;
         initOffensePiece(board.lookupLocation(row, 3));
         initOffensePiece(board.lookupLocation(row, 4));
@@ -37,41 +39,41 @@ class PiecesModel {
 
     private void initOffensePiece(MoveLocation location) {
         OffensePiece o = new OffensePiece();
-        board.register(o);
         location.add(o);
+        offenders.add(o);
     }
 
     private void initDefensePiece(MoveLocation location) {
         DefensePiece d = new DefensePiece();
-        board.register(d);
         location.add(d);
+        defenders.add(d);
     }
 
     private void initKingPiece(MoveLocation location) {
         KingPiece k = new KingPiece();
-        board.register(k);
         location.add(k);
+        defenders.add(k);
     }
 
-    private void initRow2() {
+    private void initRow2(BoardModel board) {
         int row = 1;
         initOffensePiece(board.lookupLocation(row, 4));
         initOffensePiece(board.lookupLocation(row, 5));
         initOffensePiece(board.lookupLocation(row, 6));
     }
 
-    private void initRow3() {
+    private void initRow3(BoardModel board) {
 //        int row = 2;
     }
 
-    private void initRow4() {
+    private void initRow4(BoardModel board) {
         int row = 3;
         initOffensePiece(board.lookupLocation(row, 0));
         initDefensePiece(board.lookupLocation(row, 5));
         initOffensePiece(board.lookupLocation(row, 10));
     }
 
-    private void initRow5() {
+    private void initRow5(BoardModel board) {
         int row = 4;
         initOffensePiece(board.lookupLocation(row, 0));
         initOffensePiece(board.lookupLocation(row, 1));
@@ -82,7 +84,7 @@ class PiecesModel {
         initOffensePiece(board.lookupLocation(row, 10));
     }
 
-    private void initRow6() {
+    private void initRow6(BoardModel board) {
         int row = 5;
         initOffensePiece(board.lookupLocation(row, 0));
         initOffensePiece(board.lookupLocation(row, 1));
@@ -95,7 +97,7 @@ class PiecesModel {
         initOffensePiece(board.lookupLocation(row, 10));
     }
 
-    private void initRow7() {
+    private void initRow7(BoardModel board) {
         int row = 6;
         initOffensePiece(board.lookupLocation(row, 0));
         initOffensePiece(board.lookupLocation(row, 1));
@@ -106,25 +108,25 @@ class PiecesModel {
         initOffensePiece(board.lookupLocation(row, 10));
     }
 
-    private void initRow8() {
+    private void initRow8(BoardModel board) {
         int row = 7;
         initOffensePiece(board.lookupLocation(row, 0));
         initDefensePiece(board.lookupLocation(row, 5));
         initOffensePiece(board.lookupLocation(row, 10));
     }
 
-    private void initRow9() {
+    private void initRow9(BoardModel board) {
 //        int row = 8;
     }
 
-    private void initRow10() {
+    private void initRow10(BoardModel board) {
         int row = 9;
         initOffensePiece(board.lookupLocation(row, 4));
         initOffensePiece(board.lookupLocation(row, 5));
         initOffensePiece(board.lookupLocation(row, 6));
     }
 
-    private void initRow11() {
+    private void initRow11(BoardModel board) {
         int row = 10;
         initOffensePiece(board.lookupLocation(row, 3));
         initOffensePiece(board.lookupLocation(row, 4));
@@ -133,4 +135,17 @@ class PiecesModel {
         initOffensePiece(board.lookupLocation(row, 7));
     }
 
+    public void reset(BoardModel board) {
+        offenders.clear();
+        defenders.clear();
+        init(board);
+    }
+
+    public List<Offender> getOffenders() {
+        return offenders;
+    }
+
+    public List<Defender> getDefenders() {
+        return defenders;
+    }
 }
