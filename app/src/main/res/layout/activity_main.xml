@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
 
-    <!--
+<!--
     <TextView
         android:id="@+id/moveTextView"
         android:layout_width="wrap_content"
@@ -22,112 +22,105 @@
         android:id="@+id/resetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="128dp"
         android:text="Reset Game"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/player1Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:text="1"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/resetButton"
-        app:layout_constraintLeft_toLeftOf="parent"
         />
 
-    <TextView
-        android:id="@+id/player2Text"
-        android:layout_width="wrap_content"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:ems="10"
-        android:text="2"
-        app:layout_constraintLeft_toRightOf="@+id/player1Text"
-        app:layout_constraintTop_toTopOf="@+id/player1Text" />
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/player1Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="1"
+            />
+
+        <TextView
+            android:id="@+id/player2Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:ems="10"
+            android:text="2"
+            />
+    </LinearLayout>
 
     <TableLayout
         android:id="@+id/board"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:paddingTop="0dp"
-        android:paddingBottom="0dp"
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp"
-        android:gravity="center_vertical|center_horizontal"
         android:background="@color/board"
-        app:layout_constraintTop_toTopOf="@+id/player1Text"
-    >
+        android:gravity="center_vertical|center_horizontal"
+        >
+
         <TableRow
             android:id="@+id/boardRow1"
             android:layout_width="match_parent"
             android:layout_height="36dp"
-            >
-        </TableRow>
+            android:gravity="center_horizontal"></TableRow>
+
         <TableRow
             android:id="@+id/boardRow2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
-        </TableRow>
+            android:gravity="center_horizontal"></TableRow>
+
         <TableRow
             android:id="@+id/boardRow3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
-        </TableRow>
+            android:gravity="center_horizontal"></TableRow>
+
         <TableRow
             android:id="@+id/boardRow4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
-        </TableRow>
+            android:gravity="center_horizontal"></TableRow>
+
         <TableRow
             android:id="@+id/boardRow5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
-        </TableRow>
+            android:gravity="center_horizontal"></TableRow>
+
         <TableRow
             android:id="@+id/boardRow6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
-        </TableRow>
+            android:gravity="center_horizontal"></TableRow>
+
         <TableRow
             android:id="@+id/boardRow7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
-        </TableRow>
+            android:gravity="center_horizontal"></TableRow>
+
         <TableRow
             android:id="@+id/boardRow8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
-        </TableRow>
+            android:gravity="center_horizontal"></TableRow>
+
         <TableRow
             android:id="@+id/boardRow9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
-        </TableRow>
+            android:gravity="center_horizontal"></TableRow>
+
         <TableRow
             android:id="@+id/boardRow10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
-        </TableRow>
+            android:gravity="center_horizontal"></TableRow>
+
         <TableRow
             android:id="@+id/boardRow11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
-      </TableRow>
+            android:gravity="center_horizontal"></TableRow>
     </TableLayout>
 
     <TextView
@@ -135,9 +128,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        app:layout_constraintTop_toBottomOf="@+id/board"
-        app:layout_constraintLeft_toLeftOf="parent"
         />
+    <!--
     <com.danishcaptain.games.hnefatafl.widget.BannerAdView
         android:id="@+id/ad"
         android:layout_width="wrap_content"
@@ -146,4 +138,5 @@
         app:layout_constraintTop_toBottomOf="@+id/infoText"
         app:layout_constraintLeft_toLeftOf="parent"
         />
-</android.support.constraint.ConstraintLayout>
+        -->
+</LinearLayout>
