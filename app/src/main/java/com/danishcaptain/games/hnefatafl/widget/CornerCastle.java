@@ -36,4 +36,9 @@ public class CornerCastle extends MoveLocation implements Castle {
     public boolean allowsPiece(Piece piece) {
         return piece instanceof KingPiece;
     }
+
+    @Override
+    public boolean jeopardyPiece() {
+        return true;
+    }
 }

@@ -39,4 +39,9 @@ public class DefenseLocation extends MoveLocation {
     public boolean allowsPiece(Piece piece) {
         return true;
     }
+
+    @Override
+    public boolean jeopardyPiece() {
+        return false;
+    }
 }

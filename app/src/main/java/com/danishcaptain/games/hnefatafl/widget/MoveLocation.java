@@ -79,6 +79,7 @@ public abstract class MoveLocation extends AppCompatButton {
     }
 
     public abstract boolean allowsPiece(Piece piece);
+    public abstract boolean jeopardyPiece();
 
     @Override
     public String toString() {

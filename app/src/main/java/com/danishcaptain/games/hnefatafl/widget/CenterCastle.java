@@ -2,8 +2,7 @@ package com.danishcaptain.games.hnefatafl.widget;
 
 import android.content.Context;
 
-import com.danishcaptain.games.hnefatafl.model.domain.Defender;
-import com.danishcaptain.games.hnefatafl.model.domain.DefensePiece;
+import com.danishcaptain.games.hnefatafl.model.domain.KingPiece;
 import com.danishcaptain.games.hnefatafl.model.domain.Piece;
 
 public class CenterCastle extends MoveLocation implements Castle {
@@ -35,6 +34,11 @@ public class CenterCastle extends MoveLocation implements Castle {
 
     @Override
     public boolean allowsPiece(Piece piece) {
-        return piece instanceof Defender;
+        return piece instanceof KingPiece;
+    }
+
+    @Override
+    public boolean jeopardyPiece() {
+        return true;
     }
 }

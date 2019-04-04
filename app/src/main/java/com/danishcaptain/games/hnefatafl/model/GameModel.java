@@ -3,6 +3,8 @@ package com.danishcaptain.games.hnefatafl.model;
 import android.app.Activity;
 import android.view.View;
 
+import com.danishcaptain.games.hnefatafl.rules.RulesEngine;
+
 public final class GameModel implements View.OnClickListener {
     private static GameModel singleton;
     private final PlayerModel playerModel;
@@ -13,6 +15,7 @@ public final class GameModel implements View.OnClickListener {
         piecesModel = new PiecesModel();
         playerModel = new PlayerModel();
         boardModel = new BoardModel(playerModel, piecesModel);
+        RulesEngine.getInstance().initialize(this);
     }
 
     public void init(Activity activity) {
