@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">hnefatafl</string>
+    <string name="reset_game">Reset Game</string>
 </resources>

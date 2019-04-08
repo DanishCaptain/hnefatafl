@@ -1,49 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/base"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     >
 
-<!--
-    <TextView
-        android:id="@+id/moveTextView"
-        android:layout_width="wrap_content"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-        android:layout_below="@+id/moveTextView"
-        -->
-    <Button
-        android:id="@+id/resetButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reset Game"
-        />
+        android:orientation="horizontal"
+        android:paddingBottom="0dp"
+        android:background="@color/colorPrimary"
+        >
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/reset_game"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:background="@color/colorPrimary"
+        >
+
         <TextView
             android:id="@+id/player1Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:text="1"
+            android:background="@color/colorPrimary"
             />
 
         <TextView
             android:id="@+id/player2Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
             android:ems="10"
-            android:text="2"
+            android:background="@color/colorPrimary"
             />
     </LinearLayout>
 
@@ -53,74 +55,74 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:background="@color/board"
-        android:gravity="center_vertical|center_horizontal"
-        >
+        android:gravity="center_horizontal"
+        android:paddingTop="0dp">
 
         <TableRow
             android:id="@+id/boardRow1"
             android:layout_width="match_parent"
             android:layout_height="36dp"
-            android:gravity="center_horizontal"></TableRow>
+            android:gravity="center_horizontal" />
 
         <TableRow
             android:id="@+id/boardRow2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"></TableRow>
+            android:gravity="center_horizontal" />
 
         <TableRow
             android:id="@+id/boardRow3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"></TableRow>
+            android:gravity="center_horizontal" />
 
         <TableRow
             android:id="@+id/boardRow4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"></TableRow>
+            android:gravity="center_horizontal" />
 
         <TableRow
             android:id="@+id/boardRow5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"></TableRow>
+            android:gravity="center_horizontal" />
 
         <TableRow
             android:id="@+id/boardRow6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"></TableRow>
+            android:gravity="center_horizontal" />
 
         <TableRow
             android:id="@+id/boardRow7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"></TableRow>
+            android:gravity="center_horizontal" />
 
         <TableRow
             android:id="@+id/boardRow8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"></TableRow>
+            android:gravity="center_horizontal" />
 
         <TableRow
             android:id="@+id/boardRow9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"></TableRow>
+            android:gravity="center_horizontal" />
 
         <TableRow
             android:id="@+id/boardRow10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"></TableRow>
+            android:gravity="center_horizontal" />
 
         <TableRow
             android:id="@+id/boardRow11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"></TableRow>
+            android:gravity="center_horizontal" />
     </TableLayout>
 
     <TextView
@@ -139,4 +141,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         />
         -->
+    <com.google.android.gms.ads.doubleclick.PublisherAdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/publisherAdView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        ads:adSize="BANNER"
+        ads:adUnitId="/6499/example/banner"
+        />
 </LinearLayout>
