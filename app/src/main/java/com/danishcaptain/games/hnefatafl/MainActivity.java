@@ -6,17 +6,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.danishcaptain.games.bge.application.ExecuteException;
+import com.danishcaptain.games.bge.model.GameEngineModel;
 import com.danishcaptain.games.hnefatafl.model.GameModel;
 import com.danishcaptain.games.hnefatafl.widget.BannerAdView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private BannerAdView adTextView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        try {
+            GameEngineModel.getInstance().init(this);
+        } catch (ExecuteException e) {
+            throw new RuntimeException(e);
+        }
+
         GameModel.getInstance().init(this);
 
         Button resetButton = findViewById(R.id.resetButton);
@@ -30,10 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
         TextView infoTextView = findViewById(R.id.infoText);
         GameModel.getInstance().getPlayerInstance().initInfo(infoTextView);
-
-
-        adTextView = findViewById(R.id.ad);
-        adTextView.setText("Frogs");
     }
 
 }
